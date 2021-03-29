@@ -88,23 +88,28 @@ class TODO {
         }
 
     }
-    
+
     // show todo list width filters all,complete,uncomplete
-     selectOptions(event) {
-     
-     //selctors
+    selectOptions(event) {
+
+        //selctors
         let Complete = document.querySelectorAll(".completed");
         let unComplete = document.querySelectorAll(".todo");
-	// filter all and show all todo lists
+        // filter all and show all todo lists
         if (event.target.value == "all") {
             for (let todo of unComplete) {
                 todo.style.display = "flex";
             }
             // filter uncomplete for show unomplete todo lists 
         } else if (event.target.value == "unCompleted") {
-            Complete.forEach(element => {
-                element.style.display = "none";
-            });
+
+            for (let todo of unComplete) {
+                todo.style.display = "flex";
+            }
+            for (let com of Complete) {
+                com.style.display = "none";
+            }
+
             // filter complte for show complete todo lists
         } else if (event.target.value == "completed") {
             Complete.forEach(element => {
