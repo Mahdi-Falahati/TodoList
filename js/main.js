@@ -13,4 +13,8 @@ function eventListres() {
     btnInput.addEventListener("click", function(event) {
         ToDo.addToDo(event)
     });
+    // delete and complete todo list width click on icon 
+    todoList.addEventListener("click", function(event) {
+        ToDo.deleteANDcompletedITEM(event)
+    })
 }

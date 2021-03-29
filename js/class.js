@@ -45,11 +45,45 @@ class TODO {
 
             // empty todoInput content 
             todoInput.value = "";
+
         } else {
+
+            // if input is empty show box shadow
             todoInput.style.boxShadow = "5px 5px 20px red"
+
             setTimeout(() => {
+
                 todoInput.style.boxShadow = "none"
+
             }, 1000);
+
+        }
+
+    }
+
+    // delte and comlplete  todo list from page 
+    deleteANDcompletedITEM(event) {
+
+        if (event.target.classList.contains('trash')) {
+
+            // add class delete to todo delete for add style and animatins
+            event.target.parentElement.parentElement.classList += " delete";
+
+            // remove todo list after 2s 
+            setTimeout(() => {
+
+                event.target.parentElement.parentElement.remove()
+
+            }, 2000);
+
+        } else if (event.target.classList.contains("complete")) {
+
+            // add class complete to todo complete for add style and animatins
+            if (!event.target.parentElement.parentElement.classList.contains("complete")) {
+
+                event.target.parentElement.parentElement.classList += " completed";
+
+            }
         }
     }
 }
