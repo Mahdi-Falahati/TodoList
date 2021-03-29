@@ -97,13 +97,6 @@ li {
     font-size: 20px;
 }
 
-@media screen and (max-width:922px) {
-    .todo {
-        width: 100%;
-    }
-}
-
-
 .todo-item {
     flex: 1;
     width: 70%;
@@ -149,6 +142,12 @@ li {
     height: 25px;
 }
 
+.delete {
+    transition: all 2s;
+    transform: translateY(120px) rotate(25deg);
+    background-color: #cc0606;
+    opacity: 0;
+}
 
 .select {
     display: flex;
@@ -175,9 +174,8 @@ li {
     transform: translateY(-20px) translateX(150px);
 }
 
-@media screen and (max-width:600px) {
-    .selected {
-        transform: translateY(-20px) translateX(0px);
-    }
+.completed {
+    transition: all 3s;
+    width: 40%;
+    text-decoration: line-through;
 }
-
