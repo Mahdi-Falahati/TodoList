@@ -43,6 +43,9 @@ class TODO {
             // append
             todoList.appendChild(todoDiv);
 
+            // add  todo in local storage 
+            this.AddToLocalStorage(todoInput.value);
+
             // empty todoInput content 
             todoInput.value = "";
 
@@ -123,6 +126,37 @@ class TODO {
             });
 
         }
+    }
+
+    AddToLocalStorage(todo) {
+
+        // check content local storage if note empty get contents
+        let todos = this.checkExistItemInLocalStorage()
+
+        // push note to add array for adding to localstorage
+        todos.push(todo);
+
+        // change todos array to todos string for adding to lacal storage
+        // add new todos to local storage
+        localStorage.setItem("ToDoLists", JSON.stringify(todos))
+
+    }
+
+    checkExistItemInLocalStorage() {
+        let notes;
+
+        // get content from localstorage
+        let ToDoLists = localStorage.getItem("ToDoLists");
+
+        //if empty local storage key ToDoLists return notes varibel empty array
+        if (ToDoLists === null) {
+            notes = [];
+        } else {
+            // else not empty local storage ket ToDoLists pase to JSON
+            notes = JSON.parse(ToDoLists);
+        }
+
+        return notes
     }
 
 }
