@@ -17,4 +17,8 @@ function eventListres() {
     todoList.addEventListener("click", function(event) {
         ToDo.deleteANDcompletedITEM(event)
     })
+       // categorize todo list (all, complete , unComplete) and show width filters
+    select.addEventListener("click", function(event) {
+        ToDo.selectOptions(event);
+    })
 }
