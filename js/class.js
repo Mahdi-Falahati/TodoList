@@ -72,6 +72,10 @@ class TODO {
             // add class delete to todo delete for add style and animatins
             event.target.parentElement.parentElement.classList += " delete";
 
+            // delete todo from local storage
+            let delete_todo_content = event.target.parentElement.parentElement.firstElementChild.innerHTML;
+            this.removeTodoListFromLocalStorage(delete_todo_content)
+
             // remove todo list after 2s 
             setTimeout(() => {
 
@@ -157,6 +161,22 @@ class TODO {
         }
 
         return notes
+    }
+
+    removeTodoListFromLocalStorage(deleteTodo) {
+
+        //get content for key ToDoLists from localstorage if not empty get content
+        let todos = this.checkExistItemInLocalStorage();
+
+        // find delete todo for removing delete todo from localstorage
+        todos.forEach((element, index) => {
+            if (element == deleteTodo) {
+                todos.splice(index, 1);
+            }
+        });
+
+        // set new todolists in local storage 
+        localStorage.setItem("ToDoLists", JSON.stringify(todos))
     }
 
 }
