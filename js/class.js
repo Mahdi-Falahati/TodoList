@@ -84,6 +84,9 @@ class TODO {
                 event.target.parentElement.parentElement.classList += " completed";
 
             }
+
         }
+
     }
+
 }
