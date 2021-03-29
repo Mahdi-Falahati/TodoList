@@ -179,3 +179,19 @@ li {
     width: 40%;
     text-decoration: line-through;
 }
+
+@media screen and (max-width:600px) {
+    .selected {
+        transform: translateY(-20px) translateX(0px);
+    }
+}
+
+@media screen and (max-width:922px) {
+    .todo {
+        width: 100%;
+    }
+    .completed {
+        width: 80%;
+        padding-right: 20px;
+    }
+}
