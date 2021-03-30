@@ -179,4 +179,52 @@ class TODO {
         localStorage.setItem("ToDoLists", JSON.stringify(todos))
     }
 
+    // after loaded page load todos from localstorageL
+    LoadingTodosOFLocalstorege() {
+
+        //get content OF localstorege for show in page
+        let todos = this.checkExistItemInLocalStorage();
+
+        todos.forEach(element => {
+            // todo Div
+            const todoDiv = document.createElement("div");
+
+            // add class to todo div
+            todoDiv.classList.add("todo");
+
+            // create li
+            const newTodo = document.createElement("li");
+            newTodo.innerHTML = element;
+            newTodo.classList.add("todo-item");
+            todoDiv.appendChild(newTodo);
+
+            // check mark button
+            const completedButton = document.createElement('button');
+            completedButton.classList.add("complete-btn");
+            todoDiv.appendChild(completedButton);
+
+            // check img mark button
+            const imgCompletedButton = document.createElement("img");
+            imgCompletedButton.src = "img/icons/check.png";
+            imgCompletedButton.classList.add("complete");
+            completedButton.appendChild(imgCompletedButton);
+
+            // check trash button
+            const trashButton = document.createElement('button');
+            trashButton.classList.add("trash-btn");
+            todoDiv.appendChild(trashButton);
+
+            // check img trash button
+            const imgTrashButton = document.createElement("img");
+            imgTrashButton.src = "img/icons/icons8-wastebasket-48.png";
+            imgTrashButton.classList.add("trash");
+            trashButton.appendChild(imgTrashButton);
+
+            // append
+            todoList.appendChild(todoDiv);
+
+
+        })
+    }
+
 }
