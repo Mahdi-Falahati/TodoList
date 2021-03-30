@@ -90,6 +90,9 @@ class TODO {
 
                 event.target.parentElement.parentElement.classList += " completed";
 
+                // add todo to loacalstorage as complete todo
+                let todoComplete = event.target.parentElement.parentElement.firstElementChild.innerHTML;
+                this.completeLocalStorage(todoComplete)
             }
 
         }
@@ -194,9 +197,23 @@ class TODO {
 
             // create li
             const newTodo = document.createElement("li");
-            newTodo.innerHTML = element;
+            // check is complete item or not
+            let count = 0;
+            if (element.includes("COMPLETETODO")) {
+                newTodo.innerHTML = element.replace("COMPLETETODO", "");
+                count = 1;
+            } else {
+                newTodo.innerHTML = element;
+            }
             newTodo.classList.add("todo-item");
-            todoDiv.appendChild(newTodo);
+
+            // if complete todo add class 
+            if (count == 1) {
+                todoDiv.appendChild(newTodo);
+                todoDiv.classList = "todo completed";
+            } else {
+                todoDiv.appendChild(newTodo);
+            }
 
             // check mark button
             const completedButton = document.createElement('button');
@@ -227,4 +244,16 @@ class TODO {
         })
     }
 
+    completeLocalStorage(todoComplete) {
+        // get content OF local storage
+        let todos = this.checkExistItemInLocalStorage();
+
+        todos.forEach((element, index) => {
+            if (element === todoComplete) {
+                todos[index] = element + " COMPLETETODO";
+            }
+        })
+
+        localStorage.setItem("ToDoLists", JSON.stringify(todos));
+    }
 }
