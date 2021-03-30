@@ -21,4 +21,9 @@ function eventListres() {
     select.addEventListener("click", function(event) {
         ToDo.selectOptions(event);
     })
+
+    // after loaded page load todos from localstorageL
+    document.addEventListener("DOMContentLoaded", function() {
+        ToDo.LoadingTodosOFLocalstorege()
+    })
 }
