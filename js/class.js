@@ -168,12 +168,11 @@ class TODO {
 
     removeTodoListFromLocalStorage(deleteTodo) {
 
-        //get content for key ToDoLists from localstorage if not empty get content
+       //get content for key ToDoLists from localstorage if not empty get content
         let todos = this.checkExistItemInLocalStorage();
-
         // find delete todo for removing delete todo from localstorage
         todos.forEach((element, index) => {
-            if (element == deleteTodo) {
+            if (element.split(" ")[0] == deleteTodo.trim()) {
                 todos.splice(index, 1);
             }
         });
