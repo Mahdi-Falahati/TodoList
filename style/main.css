@@ -3,14 +3,20 @@
     padding: 0%;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 16px;
 }
 
 body {
-    font-size: 16px;
     background: #a72d12;
     background-image: url("../img/background.jpg");
+    min-height: 100vh;
     color: azure;
-    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main {
     border-radius: 5px;
     letter-spacing: 2px;
 }
@@ -20,7 +26,7 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 20vh;
+    height: 120px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
@@ -38,7 +44,7 @@ header h1 {
     background: -ms-linear-gradient(158deg, rgba(244, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%);
     /* global 94%+ browsers support */
     background: linear-gradient(158deg, rgba(244, 0, 255, 1) 0%, rgba(255, 0, 0, 1) 100%);
-    box-shadow:inset 2px 2px 30px 4px rgb(255, 255, 255);
+    box-shadow: inset 2px 2px 30px 4px rgb(255, 255, 255);
     font-weight: bold;
     font-style: italic;
     letter-spacing: 1px;
@@ -191,6 +197,21 @@ li {
     transition: all 3s;
     width: 40%;
     text-decoration: line-through;
+}
+
+footer {
+    margin-top: 25px;
+    padding: 15px 0px;
+    height: 80px;
+    width: 100%;
+    color: #00f7ff;
+    background: #000000;
+}
+
+footer p {
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: bold;
 }
 
 @media screen and (max-width:600px) {
