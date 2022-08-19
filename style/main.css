@@ -202,16 +202,53 @@ li {
 footer {
     margin-top: 25px;
     padding: 15px 0px;
-    height: 80px;
     width: 100%;
-    color: #00f7ff;
-    background: #000000;
+    color: #fff;
+    background: #ffffff17;
+}
+
+.socialMedia {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.socialMedia ul {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.socialMedia ul li {
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 1.5s;
+}
+
+.socialMedia ul li a {
+    color: #ffff;
+    font-size: 22px;
+    text-decoration: none;
+}
+
+.socialMedia ul li a span {
+    font-size: 20px;
+}
+
+.socialMedia ul li:hover {
+    transform: scale(1.7) rotate(360deg);
 }
 
 footer p {
     text-align: center;
     letter-spacing: 2px;
     font-weight: bold;
+}
+
+.name {
+    font-size: 20px;
+    font-style: italic;
+    letter-spacing: 3px;
 }
 
 @media screen and (max-width:600px) {
