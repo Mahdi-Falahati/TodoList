@@ -78,9 +78,7 @@ class TODO {
 
             // remove todo list after 2s 
             setTimeout(() => {
-
                 event.target.parentElement.parentElement.remove()
-
             }, 2000);
 
         } else if (event.target.classList.contains("complete")) {
@@ -141,7 +139,7 @@ class TODO {
         let todos = this.checkExistItemInLocalStorage()
 
         // push note to add array for adding to localstorage
-        todos.push(todo);
+        todos.push(todo.trim());
 
         // change todos array to todos string for adding to lacal storage
         // add new todos to local storage
